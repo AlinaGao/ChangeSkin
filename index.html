@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	/*css  修饰美化结构  页面*/
+	*{margin:0;padding:0;border:0;}
+	ul li{list-style:none;}
+	body{font-family:"微软雅黑";}
+	#header{width:1345px;height:194px; margin:0px auto;}
+	#cont{width:1200px;height:600px;margin:10px auto;}
+	/*左边产品的样式*/
+	#cont .lt{
+	width:600px;
+	height:600px;
+	
+	float:left;
+	}
+	#cont .lt li{display:none;}
+	#cont .lt img{
+	width:600px;
+	height:600px;
+	}
+	
+	#cont .rt{
+	width:600px;
+	height:600px;
+	/*background:#009933;*/
+	float:left;
+	}
+	#cont .rt h1{font-weight:300;}
+	#cont .rt h1 span{color:#ff6700;margin-left:15px;line-height:56px;}
+	#cont .rt h2{font-weight:300;font-size:20px;}
+	#cont .rt ul li{
+	width:248px;height:49px;border:1px solid #dfdfdf;
+	float:left;margin:10px 15px 0 0;
+	text-align:center;
+	line-height:49px;/*行高 垂直*/
+	cursor:pointer;
+
+	}
+	#cont .rt ul li span{
+	width:15px;height:15px;
+	display:inline-block;
+	border-radius:50%;
+	border:1px solid #333;
+	margin:0px 10px 0 0px;/*上右下左*/
+	}
+	#cont .rt li span.bs{
+	background:#fff;
+	}
+	#cont .rt li span.ls{
+	background:#6600ff;
+	}
+	#cont .rt li span.hhs{
+	background:#333333;
+	}
+	#cont .rt li span.fs{
+	background:#ff99cc;
+	}
+	#cont .rt li span.hs{
+	background:#ffff66;
+	}
+	/*添加的样式*/
+	#cont .rt li.on{border:1px solid red;}
+
+  </style>
+	<script src="js/jquery.js"></script>
+	<script>
+	$(function(){
+	 var $imgli=$('#cont .lt li')
+	 var $tabsli=$('#cont .rt li')
+	 $tabsli.click(function(){
+		 var index=$(this).index();//序列号
+		 //alert(index);
+
+		 $(this).addClass('on').siblings().removeClass('on');
+		 $imgli.css('display','none');//消失图片
+		 $imgli.eq(index).css('display','block');
+
+
+
+	 
+	 })
+	})
+		
+	</script>
+ </head>
+ <body>
+	<!--网页的框架 结构div-->
+	<div id="header">
+		<img src="img/top.png"/>
+	</div>
+	<!--中间内容  正文-->
+	<div id="cont">
+		<!--左边是产品图-->
+		<div class="lt">
+			<ul>
+				<li style="display:block;"><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+			</ul>
+			
+		
+		</div>
+		<div class="rt">
+			<h1>购买红米Note 2s<span>799元起</span></h1>
+			<h2>选择颜色</h2>
+			<!--点击按钮部分-->
+			<ul>
+				<li class="on"><span class="bs"></span>白色</li>
+				<li><span class="ls"></span>蓝色</li>
+				<li><span class="hhs"></span>灰色</li>
+				<li><span class="fs"></span>粉色</li>
+				<li><span class="hs"></span>黄色</li>
+			
+			</ul>
+
+		
+		</div>
+	
+	</div>
+
+ </body>
+</html>
